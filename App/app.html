@@ -37,6 +37,12 @@
                     <div class='input-control'>
                         <input readonly placeholder="Senha" type='password' onfocus='checkField(this,"f")' onblur='checkField(this,"b")'>
                         <button class="edit-btn">Editar</button>
+                    </div>
+
+                    <button id="logout" onclick="localStorage.clear('token'); location.href='./index.html'">
+                        <i class='bx bxs-log-in-circle'></i>
+                        Sair
+                    </button>
                 </div>
             </div>
         </main>
