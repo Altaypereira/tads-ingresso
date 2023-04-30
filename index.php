@@ -13,7 +13,7 @@ IngressoController::removeBookings();
 
 $router = new Router("http://127.0.0.1/ingresso/");
 $router->get("/", function (){
-    require_once __DIR__ . "./src/Database/Seeder.php";
+    require_once "./src/Database/Seeder.php";
 });
 $router->namespace("AltayPereira\Ingresso\Controllers")->group("/events", Auth::class);
 $router->get("/", "EventoController:index");
