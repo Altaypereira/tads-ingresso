@@ -13,7 +13,7 @@ class EventoMigration
                 `id` int(11) NOT NULL AUTO_INCREMENT,
                 `nome` varchar(255) NOT NULL,
                 `data` DATE NOT NULL,
-                `banner` TEXT NOT NULL,
+                `banner` LONGTEXT NOT NULL,
                 `horario` TIME NOT NULL,
                 `inicio_venda` DATETIME NOT NULL,
                 `termino_venda` DATETIME NOT NULL,
