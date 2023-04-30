@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Sistema</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./third-party/iziToast/css/iziToast.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <img src="./assets/logo.webp" alt="Logo da TADS">
+
+        </header>
+        <main>
+            <div id="tickets" class="tabs">
+                <h1>Meus tickets</h1>
+            </div>
+            <div id="explore" class="tabs">
+                <h2>Explorar</h2>
+                <div id="events">
+                    
+                </div>
+            </div>
+            <div id="profile" class="tabs">
+                <h1>Meu Perfil</h1>
+                <div class="form">
+                    <div class='input-control'>
+                        <input readonly placeholder="E-mail" type='email' onfocus='checkField(this,"f")' onblur='checkField(this,"b")'>
+                        <button class="edit-btn">Editar</button>
+                    </div>
+                    <div class='input-control'>
+                        <input readonly placeholder="Senha" type='password' onfocus='checkField(this,"f")' onblur='checkField(this,"b")'>
+                        <button class="edit-btn">Editar</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <a href="#tickets">
+                    <i class='bx bxs-purchase-tag-alt'></i>
+                    <span>Meus Tickets</span>
+                </a>
+
+                <a href="#explore" class="active">
+                    <i class="bx bxs-compass"></i>
+                    <span>Explorar</span>
+                </a>
+
+
+                <a href="#profile">
+                    <i class="bx bxs-user"></i>
+                    <span>Meu Perfil</span>
+            </nav>
+        </footer>
+
+    </div>
+    <script src="./third-party/iziToast/js/iziToast.min.js"></script>
+    <script src="./js/ux/app.route.js"></script>
+    <script src="./js/components/EventCard.js"></script>
+    <script src="./js/components/FillCircle.js"></script> <script src="./js/components/CreditCard.js"></script>
+    <script src="./js/api/updateProfileInformation.js"></script>
+    <script src="./js/api/getEvents.js"></script>
+    <script src="./js/api/efetuarReserva.js"></script>
+    <script src="./js/utils/creditcard.js"></script>
+    <script src="./js/ux/efetuarCompra.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js" integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/api/getTickets.js"></script>
+    <script src="./js/ux/allowEdit.js"></script>
+    <script src="./js/ux/print.js"></script>
+</body>
+
+</html>

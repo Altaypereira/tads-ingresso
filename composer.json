@@ -1,0 +1,23 @@
+{
+    "name": "altay/ingresso",
+    "autoload": {
+        "psr-4": {
+            "AltayPereira\\Ingresso\\": "src/"
+        },
+        
+        "files": [
+            "src/config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Altay Pereira"
+        }
+    ],
+    "require": {
+        "coffeecode/router": "^2.0",
+        "coffeecode/datalayer": "^2.0",
+        "firebase/php-jwt": "^6.4",
+        "endroid/qr-code": "^4.8"
+    }
+}

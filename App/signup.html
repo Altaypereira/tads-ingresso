@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <main>
+        <h1>Crie sua<span class="br destaque">conta!!!</span></h1>
+        <div class="field">
+            <i class='bx bxs-user-badge'></i>
+            <input id="name" type="text" placeholder="Digite seu nome completo">
+        </div>
+        <div class="field">
+            <i class='bx bxs-envelope'></i>
+            <input id="user" type="text" placeholder="Digite seu e-mail">
+        </div>
+        <div class="field">
+            <i class='bx bxs-lock'></i>
+            <input id="pwd" type="password" placeholder="Digite sua senha">
+        </div>
+
+        <button id="login">
+            <i class='bx bxs-user-plus'></i>
+            <span>Criar Conta</span>
+        </button>
+        <h4>Já possui uma conta? <a href="./index.html" class="destaque">Faça login</a></h4>
+    </main>
+
+
+    <!-- scripts -->
+    <script src="./third-party/iziToast/js/iziToast.min.js"></script>
+    <script src="./js/ux/signup.js" defer></script>
+    <script src="./js/api/signup.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <main>
+        <h1>Que bom te ver <span class="br destaque">de novo!!!</span></h1>
+        <div class="field">
+            <i class='bx bx-envelope'></i>
+            <input id="user" type="text" placeholder="Digite seu e-mail">
+        </div>
+        <div class="field">
+            <i class='bx bx-lock'></i>
+            <input id="pwd" type="password" placeholder="Digite sua senha">
+        </div>
+
+        <button id="login">
+            <i class='bx bx-log-in'></i>
+            <span>Entrar</span>
+        </button>
+        <h4>Ainda não tem conta? <a href="./signup.html" class="destaque">Cadastre-se agora</a></h4>
+    </main>
+
+
+    <!-- scripts -->
+    <script src="./third-party/iziToast/js/iziToast.min.js"></script>
+    <script src="./js/ux/login.js" defer></script>
+    <script src="./js/api/login.js" defer></script>
+</body>
+</html>

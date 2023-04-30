@@ -1,0 +1,661 @@
+.app{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    z-index: 999;
+}
+
+header img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left:  0px;
+    transform: translateX(-50%);
+    animation: goToCenter 1s ease-in-out forwards;
+}
+
+@keyframes goToCenter{
+    0%{
+        transform: translateX(-50%);
+        left: 0px;
+    }
+    100%{
+        transform: translateX(-50%);
+        left: 50%;
+    }
+}
+
+
+.localizacao{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.localizacao i{
+    margin-right: 10px;
+}
+
+main{
+    position: absolute;
+    top: 100px;
+    width: 300vw;
+    height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -100%;
+    transition: all 0.5s ease-in-out;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+footer nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer nav a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 130px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+footer nav a i{
+    font-size: 2.1rem;
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+footer nav a.active{
+    transform: translateY(-50%);
+}
+
+.tabs{
+    padding: 20px 40px;
+    width: calc(100vw - 80px) !important;
+    height: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+
+}
+
+#explore h2 {
+    width: 100%;
+}
+
+
+#events{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+
+@keyframes zoomIn{
+    0%{
+        transform: scale(0);
+        transform-origin: center;
+    }
+    100%{
+        transform: scale(1);
+        transform-origin: center;
+    }
+}
+
+
+event-card{
+    animation: zoomIn 0.5s ease-in-out forwards;
+    transform: scale(0);
+}
+
+
+
+/* MODAL */
+
+#overlay{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#overlay.active{
+    opacity: 1;
+}
+
+#modal{
+    width: clamp(300px, calc(80% - 40px), 800px);
+    aspect-ratio: 16/10;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out 0.2s;
+
+}
+
+#modal.active{
+    top: 50%;
+}
+
+#modal #header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar {
+    position: relative;
+    flex: 1;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0);
+}
+
+.progress
+{
+    width: 0;
+    height: 10px;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    background-color: var(--cor-principal);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.form{
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+
+
+.form:nth-child(1).deactive, .form:nth-child(2).active{
+    left: -100%;
+}
+
+.form:nth-child(1){
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #000;
+    flex-direction: column;
+    transition: opacity .6s ease-in-out, right .3s ease-in-out;
+}
+
+.form:nth-child(2){
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.form > .card
+{
+    width: 400px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.credit-card{
+    position: relative;
+    left: -50%;
+    transition: all .4s;
+}
+
+.credit-card[flipped="true"]{
+    position: relative;
+    left: 50%;
+}
+
+.data-form{
+    width: calc(100% - 440px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+.input-control
+{
+    position: relative;
+    width: clamp(300px, 80%, 500px);
+    border: solid 1px var(--cor-principal);
+    background-color: #fff;
+    color: var(--cor-principal);
+    border-radius: 10px;
+    margin: 10px 0;
+    height: max-content;
+}
+
+.input-control > input, .input-control > select{
+    width: 100%;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    color: var(--cor-principal);
+    font-size: 16px;
+    height: 30px;
+    z-index: 4;
+    text-indent: 10px;
+}
+
+.input-control > span{
+    z-index: 1;
+    font-size: 14px;
+    background-color: white;
+    padding: 2px 4px;
+    color: var(--cor-principal);
+    transition: all .3s ease-in-out;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    border-radius: 10px;
+}
+
+.input-control.active span{
+    transform: translateY(-140%) scale(.7);
+    z-index: 9;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.buy-btn{
+    position: relative;
+    background-color: transparent;
+    color: var(--cor-principal);
+    border: solid 2px var(--cor-principal);
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    transform: scale(1);
+}
+
+.buy-btn:hover{
+    color: #fff;
+    background-color: var(--cor-principal);
+}
+
+.slider
+{
+    width: 200%;
+    height: calc(100% - 150px);
+    position: absolute;
+    left: 0;
+    top: 150px;
+    transition: all .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form:nth-child(1) > h3 
+{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.form:nth-child(1) > h5
+{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.form:nth-child(1) > span 
+{
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form:nth-child(1) > span > i
+{
+    margin-right: 5px;
+}
+
+.banner, .buy-section{
+    width: clamp(200px,30%,400px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.banner{
+    width: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+}
+
+.buy-section{
+    width: 70%;
+    height: 130%;
+    overflow-y: auto !important;
+}
+
+.user-lists
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.user-lists > .section{
+    width: 80% !important;
+    margin-bottom: 20px
+}
+
+.user-lists > .input-control {
+    width: 100%;
+}
+
+.user-lists > .section:last-child{
+    margin-bottom: 100px;
+}
+
+.hidden{
+    visibility: hidden !important;
+    opacity:0;
+}
+
+.btn-next{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: var(--cor-principal);
+    color: #fff;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.btn-next.disabled{
+    background-color: gray;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.btn-next.disabled.shake{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+.buy-btn.disabled{
+    background-color: gray;
+    color: #fff;
+    border: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.buy-btn.disbaled.shake{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+    }
+    
+
+
+
+    .ticket{
+        width: clamp(300px,90%,800px);
+        height: max-content;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        border-radius: 10px;
+        border: dashed 5px var(--cor-principal);
+        box-shadow: 1px 1px 10px 5px rgba(0,0,0,.3);
+        padding: 10px 15px;
+        margin: 20px 0;
+
+    }
+
+    .ticket >.ticket-data
+    {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        color: #fff;
+    }
+
+    .ticket-qr{
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all .3s ease-in-out;
+    }
+
+    .ticket-qr:hover{
+        transform: scale(1.1);
+    }
+    .ticket-qr > button{
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: all .3s ease-in-out;
+        background-color: #1e1e1e;
+        color: var(--cor-principal);
+        font-size: 1.2rem;
+        border: 0;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+        padding: 10px 20px;
+    }
+    
+    .ticket-qr:hover > button{
+        opacity: 1;
+    }
+
+
+    .ticket-qr > button{
+        
+    }
+
+    h4, h3
+    {
+        margin: 0;
+    }
+
+    .print-btn{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 20px;
+        background-color: var(--cor-principal);
+        color: #fff;
+        font-size: 1rem;
+        border: 0;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+        margin: 20px 0;
+    }
+
+    .ticket .name{
+        margin: 2px 0;
+        font-size: 1.3rem;
+    }
+    .ticket .local{
+        margin: 2px 0;
+        font-size: 1rem;
+    }
+    .ticket .date{
+        margin: 2px 0;
+        font-size: 1rem;
+    }
+    .ticket .spec{
+        margin: 2px 0;
+        font-size: 1rem;
+    }
+
+    .validator{
+        color: var(--cor-principal);
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border: solid 2px var(--cor-principal);
+        border-radius: 10px;
+        display: block;
+        margin: 20px 0;
+        background-color: transparent;
+    }
+
+    .validator > a{
+        color: var(--cor-principal);
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+
+
+    .validator > a > i{
+        margin-right: 5px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100%;
+    }
+    .form .input-control{
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form .input-control button{
+        border: 0;
+        background-color: transparent;
+        color: var(--cor-principal);
+        cursor: pointer;
+    }

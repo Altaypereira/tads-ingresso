@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo Admin</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../third-party/iziToast/css/iziToast.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <img src="../assets/logo.webp" alt="Logo da TADS">
+
+        </header>
+        <main>
+            <button class="btn-menu" onclick="location.href='./newTicket.html'">
+                <i class='bx bxs-calendar-event'></i>
+                Criar Evento
+            </button>
+            <button class="btn-menu" onclick="location.href='./newAdmin.html'">
+                <i class='bx bxs-lock-alt' ></i>
+                Criar Administrador
+            </button>
+            <button class="btn-menu" onclick="location.href='../app.html'">
+                <i class='bx bxs-user'></i>
+                Visualizar como usuário
+            </button>
+            <button class="btn-menu" onclick="localStorage.clear('token'); location.href='../index.html'">
+                <i class='bx bx-log-in-circle' ></i>
+                Sair
+            </button>
+        </main>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+.app{
+    overflow-y: auto !important;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: clamp(200px, 100%, 800px);
+    overflow-y: auto;
+    height: auto;
+}
+
+.form-with-icon
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px 0;
+
+    background-color: #fff;
+    border-radius: 10px !important;
+    border: 0;
+}
+
+
+input, select{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    height: 35px;
+    font-size: 1.1rem;
+}
+
+
+
+.form-with-icon:last-child{
+    margin-bottom: 100px;
+}
+
+.form-with-icon input::placeholder{
+    color: transparent;
+}
+
+.form-with-icon i{
+    color: var(--cor-principal);
+    text-align: center;
+    padding: 0 10px;
+    font-size: 1.5rem;
+}
+
+h5{
+    width: clamp(200px, 100%, 800px);
+    margin-bottom: 0;
+    color: var(--cor-principal);
+
+}
+
+input[type=file]::-webkit-file-upload-button {
+    flex: 1;
+    border: 0 !important;
+    outline: 0;
+    border-radius: 10px;
+    height: 35px;
+    font-size: 1.1rem;
+    background-color: #fff;
+}
+
+#btn-event, #btn-admin{
+    background-color: transparent;
+    width: fit-content !important;
+    height: fit-content !important;
+    padding: 10px 20px !important;
+    margin-top: 20px;
+    color: var(--cor-principal);
+    border: solid 1px var(--cor-principal);
+    border-radius: 10px;
+}
+
+#btn-cancel{
+    background-color: #e04e4e;
+    width: fit-content !important;
+    height: fit-content !important;
+    padding: 10px 20px !important;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+}

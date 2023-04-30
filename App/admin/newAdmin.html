@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo Admin</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/ticket.css">
+    <link rel="stylesheet" href="../third-party/iziToast/css/iziToast.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <img src="../assets/logo.webp" alt="Logo da TADS">
+        </header>
+        <main>
+            <h2>Novo Administrador</h2>
+
+            <h5>Nome*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-user'></i>
+                <input required type="text" id="admin-name" placeholder="Nome do Administrador">
+            </div>
+            <h5>E-mail*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-envelope' ></i>
+                <input required type="email" id="admin-email" placeholder="E-mail do Administrador">
+            </div>
+
+            <h5>Senha do Administrador*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-lock-alt' ></i>
+                <input required type="password" id="admin-password" placeholder="Senha do Administrador">
+            </div>
+           
+            <button id="btn-admin">
+                Criar Administrador
+            </button>
+
+            <button id="btn-cancel" onclick="location.href='./app.html'">
+                Cancelar
+            </button>
+
+        </main>
+    </div>
+    <script src="../third-party/iziToast/js/iziToast.min.js"></script>
+    <script src="./js/createAdmin.js"></script>
+</body>
+
+</html>

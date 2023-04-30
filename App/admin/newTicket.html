@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo Admin</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/ticket.css">
+    <link rel="stylesheet" href="../third-party/iziToast/css/iziToast.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <img src="../assets/logo.webp" alt="Logo da TADS">
+        </header>
+        <main>
+            <h2>Novo Evento</h2>
+
+            <h5>Banner do Evento*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-file-image'></i>
+                <input required type="file" id="banner" placeholder="Banner do Evento" accept="image/*">
+                <input required type="text" hidden id="banner64">
+            </div>
+
+
+
+            <h5>Nome do Evento*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-rename'></i>
+                <input required type="text" id="event-name" placeholder="Nome do evento">
+            </div>
+            <h5>Data do Evento*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-calendar'></i>
+                <input required type="date" id="event-date" placeholder="Data do evento">
+            </div>
+            <h5>Horário do Evento*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-time'></i>
+                <input required type="time" id="event-time" placeholder="Horário do evento">
+            </div>
+            <h5>Início das Vendas*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-time'></i>
+                <input required type="datetime-local" id="event-time-sell-begins" placeholder="Horário do evento">
+            </div>
+
+            <h5>Fim das Vendas*</h5>
+            <div class="form-with-icon">
+                <i class='bx bxs-time'></i>
+                <input required type="datetime-local" id="event-time-sell-ends" placeholder="Horário do evento">
+            </div>
+
+            <h5>Quantidade de Lugares*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-chair'></i>
+                <input required type="number" id="event-places" placeholder="Quantidade de Lugares">
+            </div>
+
+            <h5>Preço por Ingresso*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-money'></i>
+                <input required type="tel" id="event-price" placeholder="Preço por Ingresso">
+            </div>
+
+            <h3>Localização do Evento</h3>
+            <h5>CEP*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-map'></i>
+                <input required type="tel" id="cep" placeholder="CEP" maxlength="10">
+            </div>
+
+            <h5>Logradouro*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-street-view'></i>
+                <input required type="text" id="logradouro" placeholder="Logradouro">
+            </div>
+
+            <h5>Número*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-street-view'></i>
+                <input required type="number" id="numero" placeholder="Logradouro">
+            </div>
+
+            <h5>Bairro*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-street-view'></i>
+                <input required type="text" id="bairro" placeholder="Bairro">
+            </div>
+
+            <h5>Cidade*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-street-view'></i>
+                <input required type="text" id="cidade" placeholder="Cidade">
+            </div>
+
+            <h5>UF*</h5>
+            <div class="form-with-icon">
+                <i class='bx bx-street-view'></i>
+                <select name="uf" id="uf">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+
+            <button id="btn-event">
+                Criar Evento
+            </button>
+
+            <button id="btn-cancel" onclick="location.href='./app.html'">
+                Cancelar
+            </button>
+
+        </main>
+    </div>
+    <script src="../third-party/iziToast/js/iziToast.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js" integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/cep.js"></script>
+    <script src="./js/mask.js"></script>
+    <script src="./js/imgToBase64.js"></script>
+    <script src="./js/createEvent.js"></script>
+</body>
+
+</html>
